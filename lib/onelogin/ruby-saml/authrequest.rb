@@ -62,6 +62,7 @@ module OneLogin
         request = ""
         request_doc.write(output: request, indent: -1, transitive: 0, ie_hack: false, encoding: 'utf-8')
 
+        Logging.debug "Forcing encoding to UTF-8"
         Logging.debug "Created AuthnRequest: #{request}"
 
         request = deflate(request) if settings.compress_request
