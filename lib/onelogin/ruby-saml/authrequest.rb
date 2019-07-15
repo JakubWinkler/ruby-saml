@@ -60,7 +60,7 @@ module OneLogin
         request_doc.context[:attribute_quote] = :quote if settings.double_quote_xml_attribute_values
 
         request = ""
-        request_doc.write(request)
+        request_doc.write(output: request, indent: -1, transitive: 0, ie_hack: false, encoding: 'utf-8')
 
         Logging.debug "Created AuthnRequest: #{request}"
 
